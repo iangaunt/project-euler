@@ -5,26 +5,22 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Answer14 {
-    public static Map<Long, Long> m;
+    public static Map<Long, Long> memo;
 
-    public static long collatz(long i) {
-        if (i == 1) return 1;
-        if (m.containsKey(i)) return 1 + m.get(i);
+    public static long collatz(long n) {
+        if (memo.containsKey(n)) return memo.get(n);
 
         long count = 0;
-        if (i % 2 == 0) {
-            count = collatz(i / 2);
-        } else {
-            count = collatz(3 * i + 1);
-        }
+        if (n % 2 == 0) count = 1 + collatz(n / 2);
+        if (n % 2 == 1) count = 1 + collatz(3 * n + 1);
 
-        m.put(i, count);
+        memo.put(n, count);
         return count;
     }
 
     public static void main(String[] args) throws Exception {
-        m = new HashMap<Long, Long>();
-        m.put(1L, 1L);
+        memo = new HashMap<Long, Long>();
+        memo.put(1L, 1L);
 
         Scanner input = new Scanner(System.in);
         System.out.println("Input a long n: ");
@@ -42,6 +38,6 @@ public class Answer14 {
             }
         }
 
-        System.out.println(largest);
+        System.out.println(largest + " : " + largestCollatz);
     }
 }

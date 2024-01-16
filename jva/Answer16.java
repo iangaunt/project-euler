@@ -10,7 +10,7 @@ public class Answer16 {
         int n = input.nextInt();
         input.close();
 
-        BigInteger two = BigInteger.TWO;
+        BigInteger two = new BigInteger("2");
         BigInteger power = two.pow(n);
 
         String p = power.toString();

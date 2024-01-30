@@ -11,9 +11,13 @@ public class Answer21 {
 
     public static int sumOfFactors(int n) {
         int sum = 0;
-        for (double i = 1.0; i < n; i++) {
-            if ((double) (n) % i == 0.0) {
+
+        for (double i = 1.0; i <= Math.ceil(Math.sqrt(n)); i++) {
+            if (n % i == 0.0) {
                 sum += i;
+                if (i != n / i) {
+                    sum += n / i;
+                }
             }
         }
 
@@ -32,6 +36,7 @@ public class Answer21 {
         
         for (int i = 1; i <= n; i++) {
             int iFacSum = sumOfFactors(i);
+            System.out.println(iFacSum);
             
             ArrayList<Integer> nums;
             if (factorSumPairs.containsKey(iFacSum)) {

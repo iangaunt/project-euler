@@ -1,6 +1,6 @@
 package jva;
 
-public class Answer114 {
+public class Answer144 {
     /** m is the slope of the line between the two processed points. */
     public static double getM(double a, double b, double j, double k) {
         return (b - k) / (a - j);

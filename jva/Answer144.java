@@ -48,7 +48,6 @@ public class Answer144 {
         return n * (x - a) + b;
     }
     
-
     public static void main(String[] args) throws Exception {
         int count = 1;
 

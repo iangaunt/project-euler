@@ -23,12 +23,14 @@ public class Answer226 {
     public static void main(String[] args) throws Exception {
         double sum = 0.0;
         double step = 0.000001;
+
         for (double i = 0; i < 0.5; i += step) {
             double blancmange = blancmange(i, 500);
             double circle = circle(i);
 
             if (blancmange > circle) sum += ((blancmange - circle) * step);
         }
+        
         System.out.println(sum);
     }
 }
